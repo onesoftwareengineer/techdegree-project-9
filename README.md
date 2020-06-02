@@ -1,5 +1,11 @@
-
 # Full Stack JavaScript Techdegree v2 - REST API Project
+
+## Additional comments and improvements: 
+* there is a custom error message if no courses are found for route // * GET /api/courses 200
+* user password field filtered out for route // GET /api/courses/:id 200
+* added a constraint for Course model for title to be unique // POST /api/courses 201
+* userId for the course to be added is taken from the current authenticated user // POST /api/courses 201
+
 
 ## Overview of the Provided Project Files
 

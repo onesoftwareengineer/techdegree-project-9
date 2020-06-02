@@ -9,12 +9,33 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        //userId will be added during association with as alias
         title: {
-            type: Sequelize.STRING
+            type: Sequelize.INTEGER, 
+            unique: {
+                args: true,
+                msg: "enter unique title"
+            },
+            allowNull: false,
+            validate: {
+                notEmpty: {
+                    msg: "title needs to be added"
+                },
+                notNull: {
+                    msg: "title needs to be added"
+                }
+            }
         },
         description: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false,
+            validate: {
+                notEmpty: {
+                    msg: "description needs to be added"
+                },
+                notNull: {
+                    msg: "description needs to be added"
+                }
+            }
         },
         estimatedTime: {
             type: Sequelize.STRING,
@@ -23,11 +44,28 @@ module.exports = (sequelize) => {
         materialsNeeded: {
             type: Sequelize.STRING,
             allowNull: true
+        },
+        userId: {
+            type: Sequelize.INTEGER,
+            foreignKey: true,
+            allowNull: false,
+            references: {
+                model: 'users',
+                key: 'id'
+            },
+            validate: {
+                notEmpty: {
+                    msg: "userId needs to be added"
+                },
+                notNull: {
+                    msg: "userId needs to be added"
+                }
+            }
         }
     },{ sequelize });
     
     Course.associate = (models) => {
-        Course.belongsTo(models.User);
+        Course.belongsTo(models.User, {foreignKey: 'userId'});
     }
 
     return Course;
