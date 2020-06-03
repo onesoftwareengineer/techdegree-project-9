@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
             autoIncrement: true
         },
         title: {
-            type: Sequelize.INTEGER, 
+            type: Sequelize.STRING, 
             unique: {
                 args: true,
                 msg: "enter unique title"
