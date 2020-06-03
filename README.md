@@ -1,25 +1,28 @@
-# Full Stack JavaScript Techdegree v2 - REST API Project
+# REST API for Courses Interface
+A REST API for adding, updating and deleting courses. It features authentication and the possibility to add new users.
 
-## Additional comments and improvements: 
+## Technologies 
+JavaScript, Node, Express, Sequelize, SQLite
+
+## Screenshot
+![image](https://raw.githubusercontent.com/onesoftwareengineer/techdegree-project-9/master/screenshot1.JPG)
+*REST API routes*
+
+## Additional comments and improvements
 * there is a custom error message if no courses are found for route // * GET /api/courses 200
 * user password field filtered out for route // GET /api/courses/:id 200
 * added a constraint for Course model for title to be unique // POST /api/courses 201
 * userId for the course to be added is taken from the current authenticated user // POST /api/courses 201
 
-
 ## Overview of the Provided Project Files
-
-We've supplied the following files for you to use: 
-
-* The `seed` folder contains a starting set of data for your database in the form of a JSON file (`data.json`) and a collection of files (`context.js`, `database.js`, and `index.js`) that can be used to create your app's database and populate it with data (we'll explain how to do that below).
-* We've included a `.gitignore` file to ensure that the `node_modules` folder doesn't get pushed to your GitHub repo.
-* The `app.js` file configures Express to serve a simple REST API. We've also configured the `morgan` npm package to log HTTP requests/responses to the console. You'll update this file with the routes for the API. 
-* The `nodemon.js` file configures the nodemon Node.js module, which we are using to run your REST API.
+* The `seed` folder contains a starting set of data for the database in the form of a JSON file (`data.json`) and a collection of files (`context.js`, `database.js`, and `index.js`) that can be used to create your app's database and populate it with data.
+* The `app.js` file configures Express to serve a simple REST API. 
+* The `morgan` npm package is also configured to log HTTP requests/responses to the console. 
 * The `package.json` file (and the associated `package-lock.json` file) contain the project's npm configuration, which includes the project's dependencies.
-* The `RESTAPI.postman_collection.json` file is a collection of Postman requests that you can use to test and explore your REST API.
+* The `RESTAPI.postman_collection.json` file is a collection of Postman requests that can be used to test and explore the REST API.
+* A `.gitignore` file is included to ensure that the `node_modules` folder doesn't get pushed to a GitHub repo.
 
 ## Getting Started
-
 To get up and running with this project, run the following commands from the root of the folder that contains this README file.
 
 First, install the project's dependencies using `npm`.
@@ -40,5 +43,3 @@ And lastly, start the application.
 ```
 npm start
 ```
-
-To test the Express server, browse to the URL [http://localhost:5000/](http://localhost:5000/).
